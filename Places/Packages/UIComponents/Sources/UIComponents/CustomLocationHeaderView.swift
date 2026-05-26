@@ -13,9 +13,10 @@ public struct CustomLocationHeaderView: View {
     public var body: some View {
         VStack(spacing: 5) {
             HStack(spacing: 14) {
-                Image(systemName: .imageName)
+                Image(.imageName)
                     .font(.system(size: 30))
                     .foregroundStyle(.blue)
+                    .padding(.trailing, -8)
                     .accessibilityHidden(true)
                 
                 Text(String.customLocation)
@@ -34,7 +35,7 @@ public struct CustomLocationHeaderView: View {
 }
 
 private extension String {
-    static let imageName = "location.circle"
+    static let imageName = "location"
     static let customLocation = "Custom Location"
     static let enterLatitudeAndLongitude = "Enter latitude and longitude"
 }
