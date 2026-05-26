@@ -14,9 +14,5 @@ let package = Package(
     targets: [
         .target(
             name: "UIComponents"),
-        .testTarget(
-            name: "UIComponentsTests",
-            dependencies: ["UIComponents"]
-        ),
     ]
 )

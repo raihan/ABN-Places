@@ -37,7 +37,10 @@ final public actor ApiService: ApiServiceProtocol {
 
             let statusCode = httpResponse.statusCode
 
-            // Success case
+            guard (200...299).contains(statusCode) else {
+                throw ApiError.statusCode(statusCode)
+            }
+
             return (data, statusCode)
 
         } catch let error as ApiError {

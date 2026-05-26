@@ -21,10 +21,7 @@ struct LocationListViewModelTests {
         // Given
         let subject = LocationListViewModel()
 
-        // When (app launches)
-
-        // Then
-        /// State is idle
+        // Then state is idle on launch
         #expect(subject.state == .idle)
     }
 
@@ -47,12 +44,12 @@ struct LocationListViewModelTests {
     func fetchLocationsWhenFails() async {
         // Given
         let locationApiMock = LocationsApiMock(
-            apiError:
-                NSError(
-                    domain: "domain",
-                    code: 1,
-                    userInfo: [NSLocalizedDescriptionKey: "some error"]))
-
+            apiError: NSError(
+                domain: "domain",
+                code: 1,
+                userInfo: [NSLocalizedDescriptionKey: "some error"]
+            )
+        )
         let subject = LocationListViewModel(locationsApi: locationApiMock)
 
         // When
@@ -63,13 +60,14 @@ struct LocationListViewModelTests {
             #expect(errorMessage == "some error")
         }
     }
-    
+
     @Test
     func navigateToWikipediaWhenSucceeds() async {
         // Given
         let router = WikipediaRouterMock()
         let subject = LocationListViewModel(wikipediaRouter: router)
         let coordinate = CLLocationCoordinate2D(latitude: 52.3547498, longitude: 4.8339215)
+        
         // When
         subject.navigateToWikipedia(lat: coordinate.latitude, long: coordinate.longitude)
         await Task.yield()
@@ -78,19 +76,21 @@ struct LocationListViewModelTests {
         #expect(router.lastReceivedCoordinate?.latitude == coordinate.latitude)
         #expect(router.lastReceivedCoordinate?.longitude == coordinate.longitude)
     }
-    
+
     @Test
     func navigateToWikipediaWhenFails() async {
         // Given
         let router = WikipediaRouterMock()
         router.isWikipediaAppInstalled = false
         let subject = LocationListViewModel(wikipediaRouter: router)
-        let coordinate = CLLocationCoordinate2D(latitude: 12345, longitude: 56789)
+        let coordinate = CLLocationCoordinate2D(latitude: 52.3547498, longitude: 4.8339215)
+
         // When
         subject.navigateToWikipedia(lat: coordinate.latitude, long: coordinate.longitude)
         await Task.yield()
 
         // Then
         #expect(router.openWikipediaLocationResult == false)
+        #expect(subject.showNavigationError == true)
     }
 }

@@ -58,8 +58,12 @@ struct LocationListView: View {
 }
 
 private extension Location {
+    var coordinatesText: String {
+        "\(String(format: "%.4f", lat)), \(String(format: "%.4f", long))"
+    }
+    
     var locationRowViewModel: LocationRowViewModel {
-        LocationRowViewModel(title: name ?? .unknownLocation, subtitle: "\(lat) \(long)")
+        LocationRowViewModel(title: name ?? .unknownLocation, subtitle: coordinatesText)
     }
 }
 
