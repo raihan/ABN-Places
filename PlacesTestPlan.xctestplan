@@ -1,0 +1,62 @@
+{
+  "configurations" : [
+    {
+      "id" : "2F00F74F-ED94-4A73-874C-F3151EA04148",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Places.xcodeproj",
+      "identifier" : "85D1C8A32FC207EA0010DE0C",
+      "name" : "Places"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Places\/Packages\/LocationsApi",
+        "identifier" : "LocationsApiTests",
+        "name" : "LocationsApiTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Places\/Packages\/Router",
+        "identifier" : "RouterTests",
+        "name" : "RouterTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Places.xcodeproj",
+        "identifier" : "85D1C8B02FC207EB0010DE0C",
+        "name" : "PlacesTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Places\/Packages\/Features",
+        "identifier" : "FeaturesTests",
+        "name" : "FeaturesTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Places\/Packages\/ApiService",
+        "identifier" : "ApiServiceTests",
+        "name" : "ApiServiceTests"
+      }
+    }
+  ],
+  "version" : 1
+}
