@@ -154,7 +154,6 @@
 			name = Places;
 			packageProductDependencies = (
 				85C4EDCA2FC22BDD00BF4E81 /* ApiService */,
-				85C4EDCC2FC22BDD00BF4E81 /* LocationApi */,
 				85C4EDCE2FC22BDD00BF4E81 /* Models */,
 				85C4EDD32FC2F46800BF4E81 /* UIComponents */,
 				85C4F0B62FC4518400BF4E81 /* Router */,
@@ -631,10 +630,6 @@
 		85C4EDCA2FC22BDD00BF4E81 /* ApiService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ApiService;
-		};
-		85C4EDCC2FC22BDD00BF4E81 /* LocationApi */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LocationApi;
 		};
 		85C4EDCE2FC22BDD00BF4E81 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
