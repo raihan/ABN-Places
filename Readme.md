@@ -29,10 +29,10 @@ For this assignment, I developed the "Places" app, which displays a list of loca
 - Created an `ApiService` class to handle API consumption, with scalability in mind for future expansion.
 - Wrote unit tests using the latest `Swift Testing` framework and added test cases for features, Location API, API Service and model layers.
 
-I also cloned and updated the Wikipedia app to support deep linking with location coordinates and names. I drafted a pull request, which can be found here: https://github.com/raihan/wikipedia-ios/pull/1
+I also cloned and updated the Wikipedia app to support deep linking with location coordinates. I drafted a pull request, which can be found here: https://github.com/raihan/wikipedia-ios/pull/1
 
 
 #### ▶️ Places App Demo:
-<video width="300" controls>
-  <source src="app-demo.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/e6698a50-c862-42e4-8bd1-436396a47459
+
+
